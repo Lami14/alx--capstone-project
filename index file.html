@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Housing Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Housing Information Portal</h1>
+    <p>Access your property deeds, site numbers, and approvals securely</p>
+  </header>
+
+  <main>
+    <!-- Login Section -->
+    <section id="loginSection" class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="idNumber">South African ID Number</label>
+        <input type="text" id="idNumber" placeholder="Enter your ID number" required maxlength="13">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <label for="otp">Enter OTP</label>
+        <input type="text" id="otp" placeholder="Request OTP first" maxlength="6">
+
+        <div class="buttons">
+          <button type="button" onclick="requestOTP()">Request OTP</button>
+          <button type="submit">Login</button>
+        </div>
+      </form>
+      <p id="loginMessage"></p>
+    </section>
+
+    <!-- Search Section -->
+    <section id="searchSection" class="search-container hidden">
+      <h2>Search Properties</h2>
+      <form id="searchForm">
+        <label for="searchType">Search By</label>
+        <select id="searchType" required>
+          <option value="">--Select--</option>
+          <option value="idNumber">South African ID</option>
+          <option value="siteNumber">Site Number</option>
+          <option value="titleDeed">Title Deed</option>
+          <option value="approval">Approval Status</option>
+        </select>
+
+        <label for="searchQuery">Enter your search value</label>
+        <input type="text" id="searchQuery" placeholder="Type your value..." required>
+
+        <button type="submit">Search</button>
+      </form>
+
+      <div id="results" class="results-box">
+        <p>Search results will appear here...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Housing Department Portal | All Rights Reserved</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
